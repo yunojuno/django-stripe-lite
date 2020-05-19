@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "django_stripe"
+version = "0.1.0"
+description = "A library to aid Django integration with Stripe."
+license = "MIT"
+authors = ["YunoJuno <code@yunojuno.com>"]
+maintainers = ["YunoJuno <code@yunojuno.com>"]
+readme = "README.md"
+homepage = "https://github.com/yunojuno/django-stripe-lite"
+repository = "https://github.com/yunojuno/django-stripe-lite"
+documentation = "https://github.com/yunojuno/django-stripe-lite"
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 3.0",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+]
+packages = [
+    { include = "django_stripe", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+django = "^3.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+pytest-cov = "^2.8"
+pytest-django = "^3.7"
+coverage = "^4.5"
+pylint = "^2.4"
+flake8 = "^3.7"
+flake8-bandit = "^2.1"
+flake8-docstrings = "^1.5"
+isort = "^4.3"
+mypy = "^0.750.0"
+pre-commit = "^1.20"
+black = "=19.3b0"
+dephell = "^0.8.3"
+
+[tool.dephell.main]
+from = {format = "poetry", path = "pyproject.toml"}
+to = {format = "setuppy", path = "setup.py"}
+
+[build-system]
+requires = ["poetry>=1.0.5"]
+build-backend = "poetry.masonry.api"
