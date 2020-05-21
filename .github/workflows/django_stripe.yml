@@ -18,8 +18,10 @@ jobs:
                     POSTGRES_USER: postgres
                     POSTGRES_PASSWORD: postgres
                     POSTGRES_DB: postgres
+                ports:
+                    - 5432:5432
                 # Needed because the postgres container does not provide a healthcheck
-                options:
+                options: >-
                     --health-cmd pg_isready --health-interval 10s --health-timeout 5s
                     --health-retries 5
 
@@ -40,3 +42,4 @@ jobs:
                   TEST_DB_PASSWORD: postgres
                   TEST_DB_HOST: postgres
                   TEST_DB_NAME: postgres
+                  TEST_DB_PORT: ${{ job.services.postgres.ports[5432] }}
