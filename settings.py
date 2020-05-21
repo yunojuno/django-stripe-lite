@@ -1,15 +1,13 @@
+"""
+Library development settings file.
+
+This settings file is only required so that the project
+has a way to using django-admin.py/manage.py to create
+migrations. It provides a base set of settings such that
+Django can run the migration framework. It should not be
+used/imported in day-to-day usage of the library.
+"""
 from os import getenv
-
-#############################################
-# Relevant django-stripe-lite test settings #
-#############################################
-
-STRIPE_WEBHOOK_SECRET = "whsec_0DoBceBjS0jjm7aQj459FXiFSluJEBxt"
-ROOT_URLCONF = "tests.urls"
-
-############################
-# Required Django Settings #
-############################
 
 DEBUG = True
 
@@ -34,7 +32,6 @@ INSTALLED_APPS = (
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_stripe",
-    "tests",
 )
 
 MIDDLEWARE = [
@@ -61,11 +58,10 @@ TEMPLATES = [
     }
 ]
 
+ROOT_URLCONF = "django_stripe.urls"
 
 STATIC_ROOT = "static"
 
 STATIC_URL = "/static/"
 
 APPEND_SLASH = True
-
-assert DEBUG, "This application should be used for local testing only"
