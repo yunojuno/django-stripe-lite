@@ -52,6 +52,8 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+test-failures-local.txt
+test-rerun-local.txt
 
 # Translations
 *.mo
