@@ -1,12 +1,12 @@
 import stripe
-from django.apps import AppConfig
+from django.apps import AppConfig as DjangoAppConfig
 
 __version__ = "0.1.0"
 
-default_app_config = "django_stripe.DjangoStripeAppConfig"
+default_app_config = "django_stripe.AppConfig"
 
 
-class DjangoStripeAppConfig(AppConfig):
+class AppConfig(DjangoAppConfig):
 
     name = "django_stripe"
     verbose_name = "django-stripe-lite"
