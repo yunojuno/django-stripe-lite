@@ -48,8 +48,22 @@ python manage.py migrate django_stripe
 
 **Set up your event handlers:**
 
-If all registered event handlers pass successfully, then the webhook event will be persisted to the
-database. If not, the webhook view will deliberately raise and roll back the transaction.
+Event handlers are simply functions in your code base, which are wrapped with a decorator which
+signifies that they wish to handle a particular event type (or multiple) when it is received via the
+webhook.
+
+All event handlers must be imported at application startup, otherwise the decorator wil not be able
+to register them against the event type. An easy way to ensure this in your local project is to
+trigger the import in one of your Django Apps `apps.py::AppConfig::ready()` method
+([see the docs](https://docs.djangoproject.com/en/3.0/ref/applications/#django.apps.AppConfig.ready)).
+
+When a webhook event is received, all processing of it is wrapped in a transaction such that a
+single event handler failure will result in an HTTP 500 returned from the endpoint and the
+transaction will be rolled back resulting in no database changes for that request. This means that
+the `WebhookEvent` is not persisted unless:
+
+    a) it was received successfully and there were no active handlers registered for the event type, or:
+    b) it was received successfully and processed successfully by _all_ active handlers registered against the event type.
 
 ```python
 from django_stripe.models import WebhookEvent
