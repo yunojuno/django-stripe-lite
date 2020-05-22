@@ -9,7 +9,7 @@ default_app_config = "django_stripe.AppConfig"
 class AppConfig(DjangoAppConfig):
 
     name = "django_stripe"
-    verbose_name = "django-stripe-lite"
+    verbose_name = "Stripe"
 
     def ready(self) -> None:
         from . import settings

@@ -7,7 +7,7 @@ if TYPE_CHECKING:
 
 
 def get_client_ip(request: HttpRequest) -> Optional[str]:
-    x_forwarded_for = request.META.get("HTTP_X_FORWARDED_FOR")
+    x_forwarded_for = request.headers.get("X-Forwarded-For")
     if x_forwarded_for:
         ip = x_forwarded_for.split(",")[-1].strip()
     else:
