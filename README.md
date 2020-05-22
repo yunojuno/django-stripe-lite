@@ -62,8 +62,8 @@ single event handler failure will result in an HTTP 500 returned from the endpoi
 transaction will be rolled back resulting in no database changes for that request. This means that
 the `WebhookEvent` is not persisted unless:
 
-    a) it was received successfully and there were no active handlers registered for the event type, or:
-    b) it was received successfully and processed successfully by _all_ active handlers registered against the event type.
+* it was received successfully and there were no active handlers registered for the event type, or:
+* it was received successfully and processed successfully by _all_ active handlers registered against the event type.
 
 ```python
 from django_stripe.models import WebhookEvent
