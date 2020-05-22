@@ -7,7 +7,7 @@ of the business logic.
 
 Requires PostgreSQL, Python 3.x & Django 3.x.
 
-## Getting started
+## Installation & Usage
 
 ```bash
 pip install django-stripe-lite
@@ -100,6 +100,14 @@ def customer_handler(event: WebhookEvent) -> Any:
 
 That's it, you should be able to start receiving webhook events with the Stripe CLI test client.
 Then once you're ready, setup the production webhook via the Stripe dashboard.
+
+## Development
+
+Check out the repo, then get the deps:
+
+```bash
+poetry install
+```
 
 ## Tests
 
