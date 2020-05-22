@@ -62,8 +62,10 @@ single event handler failure will result in an HTTP 500 returned from the endpoi
 transaction will be rolled back resulting in no database changes for that request. This means that
 the `WebhookEvent` is not persisted unless:
 
-* it was received successfully and there were no active handlers registered for the event type, or:
-* it was received successfully and processed successfully by _all_ active handlers registered against the event type.
+-   it was received successfully and there were no active handlers registered for the event type,
+    or:
+-   it was received successfully and processed successfully by _all_ active handlers registered
+    against the event type.
 
 ```python
 from django_stripe.models import WebhookEvent
@@ -130,3 +132,12 @@ $ tox
 #### CI
 
 CI is handled by GitHub Actions. See the Actions tab on Github & the `.github/workflows` folder.
+
+## Publish to PyPi
+
+Update versions, then:
+
+```bash
+poetry build
+poetry publish
+```
