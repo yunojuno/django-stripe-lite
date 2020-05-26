@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-stripe-lite"
-version = "0.2.1"
+version = "0.2.2"
 description = "A library to aid Django integration with Stripe."
 license = "MIT"
 authors = ["YunoJuno <code@yunojuno.com>"]
