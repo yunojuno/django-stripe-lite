@@ -6,8 +6,8 @@ from django.conf import settings
 LIVE_MODE = getattr(settings, "STRIPE_LIVE_MODE", False)
 
 # Exportable keys
-PUBLISHABLE_KEY = getattr(settings, "STRIPE_PUBLISHABLE_KEY")
-SECRET_KEY = getattr(settings, "STRIPE_SECREY_KEY")
+PUBLISHABLE_KEY = getattr(settings, "STRIPE_PUBLISHABLE_KEY", "")
+SECRET_KEY = getattr(settings, "STRIPE_SECREY_KEY", "")
 
 # Webhook secret: used for signature validation.
 WEBHOOK_SECRET = getattr(settings, "STRIPE_WEBHOOK_SECRET", "")
