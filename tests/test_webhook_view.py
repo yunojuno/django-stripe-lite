@@ -3,6 +3,7 @@ import time
 from unittest import mock
 
 import pytest
+
 from django_stripe import settings, stripe, webhooks
 from django_stripe.models import WebhookEvent
 

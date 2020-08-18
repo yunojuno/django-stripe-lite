@@ -4,10 +4,10 @@ import datetime as dt
 from typing import TYPE_CHECKING
 
 import stripe
-from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from ..compat import JSONField
 from ..utils.request import get_client_ip
 from .base import StripeModel
 
