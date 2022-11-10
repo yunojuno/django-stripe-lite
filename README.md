@@ -5,7 +5,7 @@ Provides a light-touch Django integration with Stripe.
 We handle Stripe webhook security & persisting all events, while allowing your project to take care
 of the business logic.
 
-Requires PostgreSQL, Python 3.x & Django 3.x.
+Requires Python 3.8+ & Django 3.2+.
 
 ## Installation & Usage
 
