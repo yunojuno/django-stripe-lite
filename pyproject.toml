@@ -28,7 +28,7 @@ packages = [{ include = "django_stripe" }]
 [tool.poetry.dependencies]
 python = "^3.8"
 django = "^3.2 || ^4.0"
-stripe = "^2.76.0"
+stripe = "^5.0.0"
 
 [tool.poetry.dev-dependencies]
 black = "*"
