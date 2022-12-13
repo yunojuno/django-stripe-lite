@@ -4,9 +4,6 @@ from django.db import migrations, models
 
 import django_stripe.db.fields
 
-from ..compat import JSONField
-
-
 class Migration(migrations.Migration):
 
     initial = True
@@ -51,7 +48,7 @@ class Migration(migrations.Migration):
                 ("event_type", models.CharField(max_length=100)),
                 (
                     "data",
-                    JSONField(
+                    models.JSONField(
                         help_text=(
                             "The contents of data.object, representing the object the "
                             "webhook event was triggered for."
@@ -65,7 +62,7 @@ class Migration(migrations.Migration):
                     "request_idempotency_key",
                     models.CharField(blank=True, max_length=255),
                 ),
-                ("headers", JSONField(blank=True)),
+                ("headers", models.JSONField(blank=True)),
                 (
                     "remote_ip",
                     models.GenericIPAddressField(
