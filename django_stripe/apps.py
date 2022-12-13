@@ -1,7 +1,7 @@
 import stripe
+from django.apps import AppConfig as DjangoAppConfig
 
 import django_stripe
-from django.apps import AppConfig as DjangoAppConfig
 
 
 class AppConfig(DjangoAppConfig):
