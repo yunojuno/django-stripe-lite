@@ -1,10 +1,19 @@
-# Changelog
+# CHANGELOG
 
 All notable changes to this project will be documented in this file.
 
-## v0.4.0
+## 0.4.0 - 2022-12-13 (BREAKING)
 
-- Drops support for Python 3.7
-- Drops support for Django 2.2, 3.0 and 3.1
-- Adds support for Python 3.10 and 3.11
-- Adds support for Django 4.0 and 4.1
+This version ensures the application can work under Django 4.1 by ensuring it abides by newer
+default location for the AppConfig. The AppConfig was previously defined in the `__init__.py` with
+the `default_app_config` parameter but this was deprecated long ago in favour of placement in
+`apps.py`.
+
+Because the `AppConfig` has moved, this change is listed as a breaking change as some users may have
+explicitly defined the route to the `AppConfig` as part of their Django Settings `INSTALLED_APPS`
+configuration. The fix is to simply use the new location instead.
+
+---
+
+Version support for Django v2 -> 3.1 and Python v3.7 has been deprecated. The official support is
+now for Django v3.2->4.1.x and Python v3.8->3.11.
