@@ -7,7 +7,6 @@ import stripe
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from ..compat import JSONField
 from ..utils.request import get_client_ip
 from .base import StripeModel
 
@@ -91,7 +90,7 @@ class WebhookEvent(StripeModel):
 
     # Event-object related fields.
     event_type = models.CharField(max_length=100)
-    data = JSONField(
+    data = models.JSONField(
         help_text=_(
             "The contents of data.object, representing the object "
             "the webhook event was triggered for."
@@ -106,7 +105,7 @@ class WebhookEvent(StripeModel):
 
     # Inbound webhook request data that we store
     # for security monitoring purposes only.
-    headers = JSONField(blank=True)
+    headers = models.JSONField(blank=True)
     remote_ip = models.GenericIPAddressField(
         verbose_name=_("Remote IP"), help_text=_("IP address of the remote client.")
     )
