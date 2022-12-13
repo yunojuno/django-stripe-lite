@@ -2,6 +2,10 @@
 
 All changes to this project will be documented in this file.
 
+## 0.5.0 - 2022-12-13
+
+Upgrade our dependency on Stripe from vs 2.x to 5.x
+
 ## 0.4.1 - 2022-12-13
 
 Fix the 0.4.0 release; somehow the apps.py code got reverted before merge and we
