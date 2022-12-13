@@ -2,9 +2,10 @@ import json
 import time
 from unittest import mock
 
+import stripe
 import pytest
 
-from django_stripe import settings, stripe, webhooks
+from django_stripe import settings, webhooks
 from django_stripe.models import WebhookEvent
 
 
