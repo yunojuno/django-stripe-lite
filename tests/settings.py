@@ -1,5 +1,3 @@
-from os import getenv
-
 #############################################
 # Relevant django-stripe-lite test settings #
 #############################################
@@ -16,7 +14,10 @@ DEBUG = True
 SECRET_KEY = "TOP_SECRET"
 
 DATABASES = {
-    "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": "test.db",}
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "test.db",
+    }
 }
 
 INSTALLED_APPS = (

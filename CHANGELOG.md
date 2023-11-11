@@ -2,6 +2,10 @@
 
 All changes to this project will be documented in this file.
 
+## 0.6.0 - 2023-11-11
+
+Add support for Django 5.0, Python 3.12
+
 ## 0.5.0 - 2022-12-13
 
 Upgrade our dependency on Stripe from vs 2.x to 5.x
