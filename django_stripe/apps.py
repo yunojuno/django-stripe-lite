@@ -5,9 +5,9 @@ import django_stripe
 
 
 class AppConfig(DjangoAppConfig):
-
     name = "django_stripe"
     verbose_name = "Stripe"
+    default_auto_field = "django.db.models.AutoField"
 
     def ready(self) -> None:
         from . import settings

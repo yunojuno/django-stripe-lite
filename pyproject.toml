@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-stripe-lite"
-version = "0.5.0"
+version = "0.6.0"
 description = "A library to aid Django integration with Stripe."
 license = "MIT"
 authors = ["YunoJuno <code@yunojuno.com>"]
@@ -15,6 +15,8 @@ classifiers = [
     "Framework :: Django :: 3.2",
     "Framework :: Django :: 4.0",
     "Framework :: Django :: 4.1",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3 :: Only",
@@ -22,36 +24,26 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
 ]
 packages = [{ include = "django_stripe" }]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-django = "^3.2 || ^4.0"
+django = "^3.2 || ^4.0 | ^5.0"
 stripe = "^5.0.0"
 
 [tool.poetry.dev-dependencies]
 black = "*"
 coverage = "*"
-dephell = "*"
-flake8 = "*"
-flake8-bandit = "*"
-flake8-blind-except = "*"
-flake8-docstrings = "*"
-flake8-logging-format = "*"
-flake8-print = "*"
 freezegun = "*"
-isort = "*"
 mypy = "*"
 pre-commit = "*"
 pytest = "*"
 pytest-cov = "*"
 pytest-django = "*"
+ruff = "*"
 tox = "*"
-
-[tool.dephell.main]
-from = {format = "poetry", path = "pyproject.toml"}
-to = {format = "setuppy", path = "setup.py"}
 
 [build-system]
 requires = ["poetry>=1.0.5"]

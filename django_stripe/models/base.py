@@ -31,7 +31,7 @@ class StripeModel(TimestampedModel):
         def from_stripe_livemode(cls, livemode: bool) -> StripeModel.Mode:
             return cls.LIVE if livemode else cls.TEST  # type: ignore
 
-    id = models.BigAutoField(primary_key=True)
+    id = models.BigAutoField(primary_key=True)  # noqa: A003
     stripe_id = StripeIdField()
 
     mode = models.CharField(max_length=20, choices=Mode.choices)
