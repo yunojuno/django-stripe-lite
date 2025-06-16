@@ -2,6 +2,22 @@
 
 All changes to this project will be documented in this file.
 
+## 0.7.0 - 2024-03-19 (BREAKING)
+
+Add support for Django 5.2 and update dependency requirements:
+
+- Added support for Django 5.2
+- Deprecated support for Django versions before 4.2
+- Updated minimum Python version requirement to 3.10
+- Updated ruff configuration to use modern syntax
+- Updated GitHub Actions workflow to only test Django main branch with Python 3.12
+
+### Breaking Changes
+- Minimum Python version is now 3.10
+- Minimum Django version is now 4.2
+- Removed support for Python 3.8 and 3.9
+- Removed support for Django 3.2, 4.0, and 4.1
+
 ## 0.6.0 - 2023-11-11
 
 Add support for Django 5.0, Python 3.12
