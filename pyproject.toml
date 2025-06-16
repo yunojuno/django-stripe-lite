@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-stripe-lite"
-version = "0.6.0"
+version = "0.7.0"
 description = "A library to aid Django integration with Stripe."
 license = "MIT"
 authors = ["YunoJuno <code@yunojuno.com>"]
@@ -12,16 +12,12 @@ documentation = "https://github.com/yunojuno/django-stripe-lite"
 classifiers = [
     "Environment :: Web Environment",
     "Framework :: Django",
-    "Framework :: Django :: 3.2",
-    "Framework :: Django :: 4.0",
-    "Framework :: Django :: 4.1",
     "Framework :: Django :: 4.2",
     "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.2",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -29,8 +25,8 @@ classifiers = [
 packages = [{ include = "django_stripe" }]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-django = "^3.2 || ^4.0 | ^5.0"
+python = "^3.10"
+django = "^4.2 || ^5.0 || ^5.2"
 stripe = "^5.0.0"
 
 [tool.poetry.dev-dependencies]
