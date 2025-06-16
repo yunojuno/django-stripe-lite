@@ -30,7 +30,6 @@ django = "^4.2 || ^5.0 || ^5.2"
 stripe = "^5.0.0"
 
 [tool.poetry.dev-dependencies]
-black = "*"
 coverage = "*"
 freezegun = "*"
 mypy = "*"
