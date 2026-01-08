@@ -38,7 +38,9 @@ class WebhookEventManager(models.Manager):
 
         stripe_request = event.get("request")
         request_id = (stripe_request.id or "") if stripe_request else ""
-        request_idempotency_key = (stripe_request.idempotency_key or "") if stripe_request else ""
+        request_idempotency_key = (
+            (stripe_request.idempotency_key or "") if stripe_request else ""
+        )
 
         return self.create(
             stripe_id=event.id,
